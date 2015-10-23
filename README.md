@@ -11,4 +11,4 @@ $ python
 298
 ```
 
-Conversion of letters to number is not supported yet, you are welcome to implement it if you want - #2
+Conversion of letters to number is not supported yet, you are welcome to implement it if you want - https://github.com/OriHoch/python-hebrew-numbers/issues/2
