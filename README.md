@@ -12,3 +12,6 @@ $ python
 ```
 
 Conversion of letters to number is not supported yet, you are welcome to implement it if you want - https://github.com/OriHoch/python-hebrew-numbers/issues/2
+
+## Background
+* see https://github.com/hasadna/Open-Knesset/issues/169
