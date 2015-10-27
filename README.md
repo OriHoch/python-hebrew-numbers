@@ -11,7 +11,7 @@ $ python
 298
 ```
 
-Conversion of letters to number is not supported yet, you are welcome to implement it if you want - https://github.com/OriHoch/python-hebrew-numbers/issues/2
+Conversion of letters to numbers can be done using https://github.com/chaimleib/hebrew-special-numbers
 
 ## Background
 * see https://github.com/hasadna/Open-Knesset/issues/169
