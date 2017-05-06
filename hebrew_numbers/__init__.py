@@ -29,7 +29,7 @@ MAP = (
     (800, u'ף'),
     (900, u'ץ')
 )
-MAP_DICT = {k: v for v, k in MAP}
+MAP_DICT = dict([(k, v) for v, k in MAP])
 
 
 def gematria_to_int(string):
