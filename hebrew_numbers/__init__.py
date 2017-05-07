@@ -29,12 +29,12 @@ MAP = (
     (800, u'ף'),
     (900, u'ץ')
 )
+MAP_DICT = dict([(k, v) for v, k in MAP])
 
-def gematria_to_int(str):
+
+def gematria_to_int(string):
     res = 0
-    for char in str:
-        for num, heb in MAP:
-            if char == heb:
-                res += num
-                break
+    for char in string:
+        if char in MAP_DICT:
+            res += MAP_DICT[char]
     return res
