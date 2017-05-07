@@ -3,7 +3,7 @@ python library for conversion of hebrew numbers (Gematria)
 
 ## Usage
 
-```python
+```bash
 $ pip install --upgrade https://github.com/OriHoch/python-hebrew-numbers/archive/master.zip
 $ python
 >>> from hebrew_numbers import gematria_to_int
