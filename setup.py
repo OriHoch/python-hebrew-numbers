@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os
+import os, time
 
 try:
     from setuptools import setup
