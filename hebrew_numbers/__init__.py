@@ -30,11 +30,14 @@ MAP = (
     (900, u'ץ')
 )
 MAP_DICT = dict([(k, v) for v, k in MAP])
+GERESH = {"'", '׳'}
 
 
 def gematria_to_int(string):
     res = 0
-    for char in string:
+    for i, char in enumerate(string):
+        if char in GERESH:
+            res *= 1000
         if char in MAP_DICT:
             res += MAP_DICT[char]
     return res

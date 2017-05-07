@@ -16,6 +16,9 @@ class Test(unittest.TestCase):
         ):
             self.assertEqual(gematria_to_int(heb), num)
 
+    def test(self):
+        self.assertEqual(gematria_to_int(u'ה\'תשע"ז'), 5777)
+
 
 if __name__ == '__main__':
     unittest.main()
