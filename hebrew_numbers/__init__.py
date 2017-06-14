@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-import yaml
 from os import path
 import io
+import yaml
 
 PROJ_PATH = path.sep.join(__file__.split(path.sep)[:-2])
-DATA_PATH = path.join(PROJ_PATH, 'hebrew-special-numbers', 'styles', 'default.yml')
+DATA_PATH = path.join(
+    PROJ_PATH, 'hebrew-special-numbers', 'styles', 'default.yml')
 specialnumbers = yaml.safe_load(io.open(DATA_PATH, encoding='utf8'))
 
 

@@ -20,6 +20,9 @@ setup(
     author='Ori Hoch',
     author_email='ori@uumpa.com',
     description='conversion of hebrew numbers (Gimatria)',
+    packages=('hebrew_numbers',),
     install_requires=['PyYaml'],
-    packages=('hebrew_numbers',)
+    package_data={
+        'hebrew_numbers': ['../hebrew-special-numbers/styles/default.yml']
+    }
 )
