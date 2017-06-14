@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+import yaml
+from os import path
+import io
+
+PROJ_PATH = path.sep.join(__file__.split(path.sep)[:-2])
+DATA_PATH = path.join(PROJ_PATH, 'hebrew-special-numbers', 'styles', 'default.yml')
+specialnumbers = yaml.safe_load(io.open(DATA_PATH, encoding='utf8'))
+
 
 MAP = (
     (1, u'א'),
@@ -41,3 +49,41 @@ def gematria_to_int(string):
         if char in MAP_DICT:
             res += MAP_DICT[char]
     return res
+
+
+# adapted from hebrew-special-numbers documentation
+def int_to_gematria(num, gershayim=True):
+    """convert integers between 1 an 999 to Hebrew numerals.
+
+           - set gershayim flag to False to ommit gershayim
+    """
+    # 1. Lookup in specials
+    if num in specialnumbers['specials']:
+        retval = specialnumbers['specials'][num]
+        return _add_gershayim(retval) if gershayim else retval
+
+    # 2. Generate numeral normally
+    parts = []
+    rest = str(num)
+    while rest:
+        digit = int(rest[0])
+        rest = rest[1:]
+        if digit == 0:
+            continue
+        power = 10 ** len(rest)
+        parts.append(specialnumbers['numerals'][power * digit])
+    retval = ''.join(parts)
+    # 3. Add gershayim
+    return _add_gershayim(retval) if gershayim else retval
+
+
+def _add_gershayim(s):
+    if len(s) == 1:
+        s += specialnumbers['separators']['geresh']
+    else:
+        s = ''.join([
+            s[:-1],
+            specialnumbers['separators']['gershayim'],
+            s[-1:]
+        ])
+    return s
