@@ -5,7 +5,9 @@ python library for conversion of hebrew numbers (Gematria)
 
 ### installation
 ```bash
-$ pip install --upgrade https://github.com/OriHoch/python-hebrew-numbers/archive/master.zip
+$ git clone --recurse-submodules https://github.com/OriHoch/python-hebrew-numbers.git
+$ cd python-hebrew-numbers
+$ pip install .
 ```
 
 ### gematria_to_int
@@ -19,7 +21,9 @@ $ pip install --upgrade https://github.com/OriHoch/python-hebrew-numbers/archive
 ```bash
 >>> from hebrew_numbers import int_to_gematria
 >>> gematria_to_int(298)
-u'רח"צ'
+u'רח״צ'
+>>> gematria_to_int(298, gershayim=False)
+u'רחצ'
 ```
 
 ## Features
