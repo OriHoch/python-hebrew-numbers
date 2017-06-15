@@ -20,9 +20,9 @@ $ pip install .
 ### int_to_gematria
 ```bash
 >>> from hebrew_numbers import int_to_gematria
->>> gematria_to_int(298)
+>>> int_to_gematria(298)
 u'רח״צ'
->>> gematria_to_int(298, gershayim=False)
+>>> int_to_gematria(298, gershayim=False)
 u'רחצ'
 ```
 
