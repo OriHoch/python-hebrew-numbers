@@ -11,3 +11,13 @@
 (venv) python-hebrew-numbers$ pip install -e .
 (venv) python-hebrew-numbers$ python -m hebrew_numbers.tests
 ```
+
+## Publishing to pypi
+
+increment the version in VERSION.txt
+
+```
+rm -rf dist build &&\
+python3 setup.py sdist bdist_wheel --universal &&\
+twine upload dist/*
+```
