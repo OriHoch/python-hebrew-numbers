@@ -23,6 +23,6 @@ setup(
     packages=('hebrew_numbers',),
     install_requires=['PyYaml'],
     package_data={
-        'hebrew_numbers': ['../hebrew-special-numbers/styles/default.yml']
+        'hebrew_numbers': ['../hebrew-special-numbers-default.yml']
     }
 )

@@ -1,0 +1,111 @@
+# The MIT License (MIT)
+#
+# Copyright (c) 2015 Chaim-Leib Halbert <chaim.leib.halbert@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# To read documentation or to make contributions, visit
+#   https://github.com/chaimleib/hebrew-special-numbers
+
+# About This File
+#
+# This style should contain data sufficient for the majority of cases where
+# Hebrew numerals must be generated.
+#
+# For most cases, the typical algorithm using only the 'numerals' and possibly
+# the 'separators' keys is sufficient. However, some special cases not following
+# the typical algorithm exist. To cover these, the members of the 'specials' key
+# are provided.
+#
+# If a different style is desired, modifications can be stored in a separate
+# YAML file and deep-merged with the contents of this file. See
+#
+#   https://github.com/chaimleib/hebrew-special-numbers
+#
+# for example code.
+
+version:
+    styles:
+        default: '2.0.0'
+    order: []  # What order styles were merged. For composite styles
+separators:
+    geresh: ׳
+    gershayim: ״
+numerals:
+    1: א
+    2: ב
+    3: ג
+    4: ד
+    5: ה
+    6: ו
+    7: ז
+    8: ח
+    9: ט
+    10: י
+    20: כ
+    30: ל
+    40: מ
+    50: נ
+    60: ס
+    70: ע
+    80: פ
+    90: צ
+    100: ק
+    200: ר
+    300: ש
+    400: ת
+    500: תק
+    600: תר
+    700: תש
+    800: תת
+    900: תתק
+specials:
+    0: '0'
+    15: טו
+    16: טז
+    115: קטו
+    116: קטז
+    215: רטו
+    216: רטז
+    270: ער
+    272: ערב
+    274: עדר
+    275: ערה
+    298: רחצ
+    304: דש
+    315: שטו
+    316: שטז
+    344: שדמ
+    415: תטו
+    416: תטז
+    515: תקטו
+    516: תקטז
+    615: תרטו
+    616: תרטז
+    670: עתר
+    672: תערב
+    674: עדרת
+    698: תרחצ
+    715: תשטו
+    716: תשטז
+    744: תשדמ
+    815: תתטו
+    816: תתטז
+    915: תתקטו
+    916: תתקטז

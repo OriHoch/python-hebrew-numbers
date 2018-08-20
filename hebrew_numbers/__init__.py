@@ -5,7 +5,7 @@ import yaml
 
 PROJ_PATH = path.sep.join(__file__.split(path.sep)[:-2])
 DATA_PATH = path.join(
-    PROJ_PATH, 'hebrew-special-numbers', 'styles', 'default.yml')
+    PROJ_PATH, 'hebrew-special-numbers-default.yml')
 specialnumbers = yaml.safe_load(io.open(DATA_PATH, encoding='utf8'))
 
 
