@@ -9,37 +9,45 @@ DATA_PATH = path.join(
 specialnumbers = yaml.safe_load(io.open(DATA_PATH, encoding='utf8'))
 
 
-MAP = (
-    (1, u'א'),
-    (2, u'ב'),
-    (3, u'ג'),
-    (4, u'ד'),
-    (5, u'ה'),
-    (6, u'ו'),
-    (7, u'ז'),
-    (8, u'ח'),
-    (9, u'ט'),
-    (10, u'י'),
-    (20, u'כ'),
-    (30, u'ל'),
-    (40, u'מ'),
-    (50, u'נ'),
-    (60, u'ס'),
-    (70, u'ע'),
-    (80, u'פ'),
-    (90, u'צ'),
-    (100, u'ק'),
-    (200, u'ר'),
-    (300, u'ש'),
-    (400, u'ת'),
-    (500, u'ך'),
-    (600, u'ם'),
-    (700, u'ן'),
-    (800, u'ף'),
-    (900, u'ץ')
-)
-MAP_DICT = dict([(k, v) for v, k in MAP])
+MAP_DICT = {u'א': [1, 1],
+            u'ב': [2, 2],
+            u'ג': [3, 3],
+            u'ד': [4, 4],
+            u'ה': [5, 5],
+            u'ו': [6, 6],
+            u'ז': [7, 7],
+            u'ח': [8, 8],
+            u'ט': [9, 9],
+            u'י': [10, 1],
+            u'כ': [20, 2],
+            u'ל': [30, 3],
+            u'מ': [40, 4],
+            u'נ': [50, 5],
+            u'ס': [60, 6],
+            u'ע': [70, 7],
+            u'פ': [80, 8],
+            u'צ': [90, 9],
+            u'ק': [100, 1],
+            u'ר': [200, 2],
+            u'ש': [300, 3],
+            u'ת': [400, 4],
+            u'ך': [20, 2],
+            u'ם': [40, 4],
+            u'ן': [50, 5],
+            u'ף': [80, 8],
+            u'ץ': [90, 9]}
+
 GERESH = set(("'", '׳'))
+
+
+def gematria_ktana_to_int(name):
+    sum = 0
+    for char in name:
+        if char in ['"', "'"]:
+            continue
+        sum += MAP_DICT[char][1]
+    sum = str(sum) 
+    return int(sum[0]) + int(sum[1]) if len(sum) >= 2 else int(sum)
 
 
 def gematria_to_int(string):
@@ -48,7 +56,7 @@ def gematria_to_int(string):
         if char in GERESH and i < len(string)-1:
             res *= 1000
         if char in MAP_DICT:
-            res += MAP_DICT[char]
+            res += MAP_DICT[char][0]
     return res
 
 

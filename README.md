@@ -28,10 +28,20 @@ int_to_gematria(298, gershayim=False)
 # u'רחצ'
 ```
 
+### gematria_ktana_to_int
+
+```python
+from hebrew_numbers import gematria_ktana_to_int
+gematria_ktana_to_int('נחמה')
+# 4
+```
+
+
 ## Features
 
 * conversion from string of letters to an integer number
 * conversion of integer to string (using [hebrew-special-numbers](https://github.com/chaimleib/hebrew-special-numbers))
+
 
 ## Contributing
 

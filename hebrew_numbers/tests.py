@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from . import gematria_to_int, int_to_gematria
+from . import gematria_to_int, int_to_gematria, gematria_ktana_to_int
 
 
 class TestGematriaToInt(unittest.TestCase):
@@ -40,6 +40,16 @@ class TestIntToGematria(unittest.TestCase):
         ):
             self.assertEqual(int_to_gematria(num, gershayim=False), heb)
 
+class TestGematriaKtanaToInt(unittest.TestCase):
+
+    def test_gematria_ktana(self):
+        for heb, num in (
+            (u'בן', 7),
+            (u'נעמה', 3),
+            (u'תשמ"ץ', 2),
+            (u"איצקוביץ'", 3)
+        ):
+            self.assertEqual(gematria_ktana_to_int(heb), num)
 
 if __name__ == '__main__':
     unittest.main()
