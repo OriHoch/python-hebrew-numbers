@@ -3,7 +3,7 @@ from os import path
 import io
 import yaml
 
-PROJ_PATH = path.sep.join(__file__.split(path.sep)[:-2])
+PROJ_PATH = path.sep.join(__file__.split(path.sep)[:-1])
 DATA_PATH = path.join(
     PROJ_PATH, 'hebrew-special-numbers-default.yml')
 specialnumbers = yaml.safe_load(io.open(DATA_PATH, encoding='utf8'))
