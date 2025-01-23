@@ -19,6 +19,17 @@ class TestGematriaToInt(unittest.TestCase):
     def test_thousands(self):
         self.assertEqual(gematria_to_int(u'ה\'תשע"ז'), 5777)
 
+    def test_mispar_hechrachi(self):
+        for medial, final in (u"כך", u"מם", u"נן", u"פף", u"צץ"):
+            self.assertEqual(
+                gematria_to_int(medial, mispar_hechrachi=True),
+                gematria_to_int(final, mispar_hechrachi=True),
+            )
+            self.assertNotEqual(
+                gematria_to_int(medial),
+                gematria_to_int(final),
+            )
+
 
 class TestIntToGematria(unittest.TestCase):
 

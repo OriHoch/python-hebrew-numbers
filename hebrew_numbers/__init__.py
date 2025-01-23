@@ -40,15 +40,25 @@ MAP = (
 )
 MAP_DICT = dict([(k, v) for v, k in MAP])
 GERESH = set(("'", '׳'))
+NORMALIZE_FINAL = {
+    u'ך': u'כ',
+    u'ם': u'מ',
+    u'ן': u'נ',
+    u'ף': u'פ',
+    u'ץ': u'צ'
+}
 
 
-def gematria_to_int(string):
+def gematria_to_int(string, mispar_hechrachi=False):
     res = 0
     for i, char in enumerate(string):
         if char in GERESH and i < len(string)-1:
             res *= 1000
         if char in MAP_DICT:
+            if mispar_hechrachi:
+                char = NORMALIZE_FINAL.get(char, char)
             res += MAP_DICT[char]
+            
     return res
 
 
